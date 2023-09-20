@@ -12,4 +12,6 @@ function transitionOut() {
     main.style.marginTop = "-50%"
     setTimeout(transitionIn, 500)
 }
-function transitionIn() {}
+function transitionIn() {
+    board.style.marginBottom = "10%"
+}
