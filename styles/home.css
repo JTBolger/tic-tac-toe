@@ -94,6 +94,54 @@
     background-color: #698db8b9;
     margin-top: 65%;
 }
+#box {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 10px;
+    background-color: rgba(189, 189, 189, 0);
+    position: absolute;
+}
+#box:hover {
+    background-color: rgb(189, 189, 189);
+}
+.box1 {
+    margin: 0.5rem;
+}
+.box2 {
+    margin-left: 11rem;
+    margin-top: 0.5rem;
+}
+.box3 {
+    margin-left: 21.5rem;
+    margin-top: 0.5rem;
+}
+.box4 {
+    margin-top: 11rem;
+    margin-left: 0.5rem;
+}
+.box5 {
+    margin-top: 11rem;
+    margin-left: 11rem;
+}
+.box6 {
+    margin-top: 11rem;
+    margin-left: 21.5rem;
+}
+.box7 {
+    margin-top: 21.5rem;
+    margin-left: 0.5rem;
+}
+.box8 {
+    margin-top: 21.5rem;
+    margin-left: 11rem;
+}
+.box9 {
+    margin-top: 21.5rem;
+    margin-left: 21.5rem;
+}
+
+
+
 
 /* BG Animation */
 #bg-anim {
