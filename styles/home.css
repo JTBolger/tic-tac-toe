@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
 }
-.main {
+#main {
     width: 100%;
     height: 100%;
     background-color: rgb(221, 221, 221);
@@ -17,10 +17,40 @@
     font-size: 2.5rem;
     margin-top: 10%;
     text-shadow: 3px 3px #34425575;
+    transition: 1s;
 }
-
+#begin {
+    position: absolute;
+    margin-top: 10%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgb(189, 189, 189);
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 45%;
+    animation: button;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#begin:hover {}
+@keyframes button {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        background-color: #698db8b9;
+    }
+    50% {
+        background-color: #ee2b3fbe;
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+        background-color: #698db8b9;
+    }
+}
 /* BG Animation */
-.bg-anim {
+#bg-anim {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -32,7 +62,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 1;
 }
 .Xs li{
     font-family: "arial black";
@@ -48,6 +77,7 @@
     justify-content: center;
     align-items: center;  
     text-align: center; 
+    z-index: 1;
 }
 .Xs li:nth-child(1) {
     left: 100%;
@@ -133,7 +163,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 1;
 }
 .Ys li{
     font-family: "arial black";
@@ -150,7 +179,8 @@
     display: flex;
     justify-content: center;
     align-items: center;  
-    text-align: center; 
+    text-align: center;
+    z-index: 1;
 }
 .Ys li:nth-child(1) {
     right: 100%;

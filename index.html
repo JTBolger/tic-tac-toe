@@ -7,7 +7,7 @@
         <link rel="icon" href="images/tic-tac-toe-icon.PNG">
     </head>
     <body>
-        <div class="bg-anim">
+        <div id="bg-anim">
             <ul class="Xs">
                 <li></li>
                 <li></li>
@@ -27,11 +27,14 @@
                 <li></li>
             </ul>
         </div>
-        <div class="main">
+        <div id="main">
             <div id="title">
                 <h1>Welcome</h1>
-                <div class="begin">BEGIN</div>
+                <div id="begin" onclick="buttonPress()">BEGIN</div>
             </div>
         </div>
+
+        <div id="board"></div>
+        <script src="scripts/begin.js"></script>
     </body>
 </html>
