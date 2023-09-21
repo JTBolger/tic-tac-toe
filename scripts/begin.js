@@ -1,4 +1,4 @@
-var button = document.getElementById("begin")
+var button = document.getElementById("twoPlayer")
 var main = document.getElementById("title")
 
 var board = document.getElementById("board")

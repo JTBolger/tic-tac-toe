@@ -20,7 +20,7 @@
     text-shadow: 3px 3px #34425575;
     transition: 1s;
 }
-#begin {
+#singlePlayer {
     position: absolute;
     margin-top: 10%;
     font-family: "arial black";
@@ -28,26 +28,26 @@
     text-shadow: 1px 2px #34425575;
     background-color: rgb(189, 189, 189);
     font-size: 2rem;
-    padding: 15px;
-    border-radius: 45%;
-    animation: button;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
+    padding: 10px;
+    border-radius: 45px;
     cursor: pointer;
     transition: 0.5s;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
 }
-@keyframes button {
-    0% {
-        transform: translateX(0) rotate(0deg);
-        background-color: #698db8b9;
-    }
-    50% {
-        background-color: #ee2b3fbe;
-    }
-    100% {
-        transform: translateX(0) rotate(0deg);
-        background-color: #698db8b9;
-    }
+#twoPlayer {
+    position: absolute;
+    margin-top: 17%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgb(189, 189, 189);
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 /* Second Page*/
 #board {

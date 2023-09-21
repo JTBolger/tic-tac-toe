@@ -8,7 +8,6 @@ var B6 = "null";
 var B7 = "null";
 var B8 = "null";
 var B9 = "null";
-var boxes = document.getElementsByClassName("box")
 var box1 = document.getElementById("box1");
 var box2 = document.getElementById("box2");
 var box3 = document.getElementById("box3");
@@ -27,6 +26,7 @@ function inputOne() {
             B1 = "blue";
             x = 0;
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box1.style.backgroundColor = "#ee2b3fbe";
@@ -45,6 +45,7 @@ function inputTwo() {
             B2= "blue";
             x= 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box2.style.backgroundColor = "#ee2b3fbe"
@@ -63,6 +64,7 @@ function inputThree() {
             B3 = "blue";
             x= 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box3.style.backgroundColor = "#ee2b3fbe"
@@ -81,6 +83,7 @@ function inputFour() {
             B4 = "blue";
             x = 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box4.style.backgroundColor = "#ee2b3fbe"
@@ -99,6 +102,7 @@ function inputFive() {
             B5 = "blue";
             x= 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box5.style.backgroundColor = "#ee2b3fbe"
@@ -117,6 +121,7 @@ function inputSix() {
             B6 = "blue";
             x= 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box6.style.backgroundColor = "#ee2b3fbe"
@@ -135,6 +140,7 @@ function inputSeven() {
             B7 = "blue";
             x= 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box7.style.backgroundColor = "#ee2b3fbe"
@@ -153,6 +159,7 @@ function inputEight() {
             B8 = "blue";
             x= 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box8.style.backgroundColor = "#ee2b3fbe"
@@ -171,6 +178,7 @@ function inputNine() {
             B9 = "blue";
             x= 0
             testForWin()
+            setTimeout(computerTurn("mindless"), 1000)
         }
         else {
             box9.style.backgroundColor = "#ee2b3fbe"
@@ -282,5 +290,125 @@ function testForWin() {
         box3.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box7.style.backgroundColor = "green"
+    }
+}
+
+
+
+var state = 0
+
+function enableComputer() {
+    buttonPress()
+    state = 1
+}
+
+function buttonPress() {
+    button1.style.opacity = "0"
+    setTimeout(transitionOut, 500)
+}
+function transitionOut() {
+    button1.style.marginTop = "-25%"
+    main.style.marginTop = "-50%"
+    setTimeout(transitionIn, 500)
+}
+function transitionIn() {
+    board.style.marginBottom = "10%"
+}
+
+function play(box) {
+    if (box == "B1") {
+        B1 = "red"
+        box1.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B2") {
+        B2 = "red"
+        box2.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B3") {
+        B3 = "red"
+        box3.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B4") {
+        B4 = "red"
+        box4.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B5") {
+        B5 = "red"
+        box5.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B6") {
+        B6 = "red"
+        box6.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B7") {
+        B7 = "red"
+        box7.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B8") {
+        B8 = "red"
+        box8.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+    else if (box == "B9") {
+        B9 = "red"
+        box9.style.backgroundColor = "#ee2b3fbe"
+        x = 1
+    }
+}
+
+var p = 0
+function computerTurn(difficulty) {
+    if (state == 1) {
+        if (x == 0) {
+            if (difficulty == "mindless") {
+                var i = 0
+                for (i=0; i<100; i++) {
+                    p = Math.floor(Math.random() * 10)
+                    if (p == 0 && B1 != "blue" && B1 != "red") {
+                        play("B1")
+                        i = 101
+                    }
+                    else if(p == 1 && B2 != "blue" && B2 != "red") {
+                        play("B2")
+                        i = 101
+                    }
+                    else if(p == 2 && B3 != "blue" && B3 != "red") {
+                        play("B3")
+                        i = 101
+                    }
+                    else if(p == 3 && B4 != "blue" && B4 != "red") {
+                        play("B4")
+                        i = 101
+                    }
+                    else if(p == 4 && B5 != "blue" && B5 != "red") {
+                        play("B5")
+                        i = 101
+                    }
+                    else if(p == 5 && B6 != "blue" && B6 != "red") {
+                        play("B6")
+                        i = 101
+                    }
+                    else if(p == 6 && B7 != "blue" && B7 != "red") {
+                        play("B7")
+                        i = 101
+                    }
+                    else if(p == 7 && B8 != "blue" && B8 != "red") {
+                        play("B8")
+                        i = 101
+                    }
+                    else if(p == 8 && B9 != "blue" && B9 != "red") {
+                        play("B9")
+                        i = 101
+                    }
+                }
+            }
+        }
     }
 }
