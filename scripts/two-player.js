@@ -339,7 +339,15 @@ function easyDiff() {
     transitionOutDiff()
 }
 function hardDiff() {
-    diff = "hard"
+    x = 0
+    diff = "easy"
+    P = Math.floor(Math.random() * 11)
+    if (P < 5) {
+        play("B5")
+    }
+    else {
+        computerTurn("easy")
+    }
     transitionOutDiff()
 }
 
@@ -403,6 +411,7 @@ function play(box) {
 // Computer Program //
 
 var p = 0
+var P = 0
 function computerTurn(difficulty) {
     if (state == 1) {
         if (x == 0) {
@@ -448,7 +457,7 @@ function computerTurn(difficulty) {
                     }
                 }
             }
-            if (difficulty == "easy") {
+            else if (difficulty == "easy") {
                 if (B1 == "blue" && B2 == "blue" && B3 == "null") {
                     play("B3")
                 }
