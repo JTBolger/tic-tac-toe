@@ -49,6 +49,84 @@
     cursor: pointer;
     transition: 0.5s;
 }
+/* Difficulty Selectors*/
+#difficulty {
+    width: 30rem;
+    height: 85%;
+    position: absolute;
+    background-color: rgb(189, 189, 189);
+    justify-content: center;
+    display: flex;
+    margin-left: 33%;
+    bottom: 0;
+    margin-bottom: 50%;
+    transition: 0.75s;
+    border-radius: 65px;
+}
+.diffTitle {
+    position: absolute;
+    margin-top: 10%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgb(189, 189, 189);
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+}
+.mindless {
+    position: absolute;
+    margin-top: 30%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgb(177, 177, 177);
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+}
+.easy {
+    position: absolute;
+    margin-top: 50%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgb(177, 177, 177);
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+}
+.hard {
+    position: absolute;
+    margin-top: 70%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgb(177, 177, 177);
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+}
 /* Second Page*/
 #board {
     margin-left: -0.8%;

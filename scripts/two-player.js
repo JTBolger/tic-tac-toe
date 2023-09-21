@@ -18,6 +18,8 @@ var box7 = document.getElementById("box7");
 var box8 = document.getElementById("box8");
 var box9 = document.getElementById("box9");
 
+var diff = "mindless"
+
 function inputOne() {
     if (B1 != "blue" && B1 != "red") {
         if (x == 1) {
@@ -26,7 +28,7 @@ function inputOne() {
             B1 = "blue";
             x = 0;
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box1.style.backgroundColor = "#ee2b3fbe";
@@ -45,7 +47,7 @@ function inputTwo() {
             B2= "blue";
             x= 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box2.style.backgroundColor = "#ee2b3fbe"
@@ -64,7 +66,7 @@ function inputThree() {
             B3 = "blue";
             x= 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box3.style.backgroundColor = "#ee2b3fbe"
@@ -83,7 +85,7 @@ function inputFour() {
             B4 = "blue";
             x = 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box4.style.backgroundColor = "#ee2b3fbe"
@@ -102,7 +104,7 @@ function inputFive() {
             B5 = "blue";
             x= 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box5.style.backgroundColor = "#ee2b3fbe"
@@ -121,7 +123,7 @@ function inputSix() {
             B6 = "blue";
             x= 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box6.style.backgroundColor = "#ee2b3fbe"
@@ -140,7 +142,7 @@ function inputSeven() {
             B7 = "blue";
             x= 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box7.style.backgroundColor = "#ee2b3fbe"
@@ -159,7 +161,7 @@ function inputEight() {
             B8 = "blue";
             x= 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box8.style.backgroundColor = "#ee2b3fbe"
@@ -178,7 +180,7 @@ function inputNine() {
             B9 = "blue";
             x= 0
             testForWin()
-            setTimeout(computerTurn("mindless"), 1000)
+            setTimeout(computerTurn(diff), 1000)
         }
         else {
             box9.style.backgroundColor = "#ee2b3fbe"
@@ -293,26 +295,50 @@ function testForWin() {
     }
 }
 
-
+// Computer //
 
 var state = 0
+var diffBoard = document.getElementById("difficulty")
+var buttonS = document.getElementById("singlePlayer")
 
 function enableComputer() {
-    buttonPress()
+    buttonPressS()
     state = 1
 }
 
-function buttonPress() {
-    button1.style.opacity = "0"
-    setTimeout(transitionOut, 500)
+function buttonPressS() {
+    buttonS.style.opacity = "0"
+    setTimeout(transitionOutS, 500)
 }
-function transitionOut() {
-    button1.style.marginTop = "-25%"
+function transitionOutS() {
+    buttonS.style.marginTop = "-25%"
     main.style.marginTop = "-50%"
+    setTimeout(transitionInDiff, 500)
+}
+function transitionInDiff() {
+    diffBoard.style.marginBottom = "4%"
+}
+function transitionOutDiff() {
+    diffBoard.style.marginBottom = "50%"
     setTimeout(transitionIn, 500)
 }
 function transitionIn() {
     board.style.marginBottom = "10%"
+}
+
+// Difficulty Selector //
+
+function mindlessDiff() {
+    diff = "mindless"
+    transitionOutDiff()
+}
+function easyDiff() {
+    diff = "easy"
+    transitionOutDiff()
+}
+function hardDiff() {
+    diff = "hard"
+    transitionOutDiff()
 }
 
 function play(box) {
@@ -320,48 +346,59 @@ function play(box) {
         B1 = "red"
         box1.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B2") {
         B2 = "red"
         box2.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B3") {
         B3 = "red"
         box3.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B4") {
         B4 = "red"
         box4.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B5") {
         B5 = "red"
         box5.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B6") {
         B6 = "red"
         box6.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B7") {
         B7 = "red"
         box7.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B8") {
         B8 = "red"
         box8.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
     else if (box == "B9") {
         B9 = "red"
         box9.style.backgroundColor = "#ee2b3fbe"
         x = 1
+        testForWin()
     }
 }
+
+// Computer Program //
 
 var p = 0
 function computerTurn(difficulty) {
@@ -408,6 +445,9 @@ function computerTurn(difficulty) {
                         i = 101
                     }
                 }
+            }
+            if (difficulty == "easy") {
+
             }
         }
     }
