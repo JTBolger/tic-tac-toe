@@ -19,7 +19,7 @@ var box7 = document.getElementById("box7");
 var box8 = document.getElementById("box8");
 var box9 = document.getElementById("box9");
 
-var diff = "mindless"
+var diff = "null"
 
 function inputOne() {
     if (B1 != "blue" && B1 != "red") {
@@ -103,7 +103,7 @@ function inputFive() {
             box5.style.backgroundColor = "#698db8b9"
             box5.style.opacity = "1"
             B5 = "blue";
-            x= 0
+            x = 0
             testForWin()
             setTimeout(computerTurn(diff), 1000)
         }
@@ -111,7 +111,7 @@ function inputFive() {
             box5.style.backgroundColor = "#ee2b3fbe"
             box5.style.opacity = "1"
             B5 = "red"
-            x= 1
+            x = 1
             testForWin()
         }
     }
@@ -122,7 +122,7 @@ function inputSix() {
             box6.style.backgroundColor = "#698db8b9"
             box6.style.opacity = "1"
             B6 = "blue";
-            x= 0
+            x = 0
             testForWin()
             setTimeout(computerTurn(diff), 1000)
         }
@@ -130,7 +130,7 @@ function inputSix() {
             box6.style.backgroundColor = "#ee2b3fbe"
             box6.style.opacity = "1"
             B6 = "red"
-            x= 1
+            x = 1
             testForWin()
         }
     }
@@ -141,7 +141,7 @@ function inputSeven() {
             box7.style.backgroundColor = "#698db8b9"
             box7.style.opacity = "1"
             B7 = "blue";
-            x= 0
+            x = 0
             testForWin()
             setTimeout(computerTurn(diff), 1000)
         }
@@ -149,7 +149,7 @@ function inputSeven() {
             box7.style.backgroundColor = "#ee2b3fbe"
             box7.style.opacity = "1"
             B7 = "red"
-            x= 1
+            x = 1
             testForWin()
         }
     }
@@ -160,7 +160,7 @@ function inputEight() {
             box8.style.backgroundColor = "#698db8b9"
             box8.style.opacity = "1"
             B8 = "blue";
-            x= 0
+            x = 0
             testForWin()
             setTimeout(computerTurn(diff), 1000)
         }
@@ -168,7 +168,7 @@ function inputEight() {
             box8.style.backgroundColor = "#ee2b3fbe"
             box8.style.opacity = "1"
             B8 = "red"
-            x= 1
+            x = 1
             testForWin()
         }
     }
@@ -179,7 +179,7 @@ function inputNine() {
             box9.style.backgroundColor = "#698db8b9"
             box9.style.opacity = "1"
             B9 = "blue";
-            x= 0
+            x = 0
             testForWin()
             setTimeout(computerTurn(diff), 1000)
         }
@@ -187,15 +187,29 @@ function inputNine() {
             box9.style.backgroundColor = "#ee2b3fbe"
             box9.style.opacity = "1"
             B9 = "red"
-            x= 1
+            x = 1
             testForWin()
         }
     }
 }
 
-function endGame() {
+var B = 0
+var R = 0 
+function addScore(scoreToAdd) {
+    var newScore = scoreToAdd + 1
+    return newScore
+}
+function endGame(winner) {  
     state = 0
     revealReset()
+    if (winner == "blue") {
+        B = addScore(B)
+        document.getElementById("blueScore").innerHTML = B
+    }
+    else if (winner == "red") {
+        R = addScore(R)
+        document.getElementById("redScore").innerHTML = R
+    }
 }
 
 var resetb = document.getElementById("reset")
@@ -204,7 +218,12 @@ function revealReset() {
 }
 
 function reset() {
-    state = 1
+    if (diff == "mindless" || diff == "easy" || diff == "hard") {
+        state = 1
+    }
+    else {
+        state = 0
+    }
     x = 1
     resetb.style.marginTop = "115%"
     B1 = "null";
@@ -239,97 +258,97 @@ function reset() {
 function testForWin() {
     
     if (B1 == "blue" && B2 == "blue" && B3 == "blue") {
-        endGame()
+        endGame("blue")
         box1.style.backgroundColor = "green"
         box2.style.backgroundColor = "green"
         box3.style.backgroundColor = "green"
     }
     else if (B1 == "blue" && B5 == "blue" && B9 == "blue") {
-        endGame()
+        endGame("blue")
         box1.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box9.style.backgroundColor = "green"
     }
     else if (B1 == "blue" && B4 == "blue" && B7 == "blue") {
-        endGame()
+        endGame("blue")
         box1.style.backgroundColor = "green"
         box4.style.backgroundColor = "green"
         box7.style.backgroundColor = "green"
     }
     else if (B4 == "blue" && B5 == "blue" && B6 == "blue") {
-        endGame()
+        endGame("blue")
         box4.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box6.style.backgroundColor = "green"
     }
     else if (B7 == "blue" && B8 == "blue" && B9 == "blue") {
-        endGame()
+        endGame("blue")
         box7.style.backgroundColor = "green"
         box8.style.backgroundColor = "green"
         box9.style.backgroundColor = "green"
     }
     else if (B2 == "blue" && B5 == "blue" && B8 == "blue") {
-        endGame()
+        endGame("blue")
         box2.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box8.style.backgroundColor = "green"
     }
     else if (B3 == "blue" && B6 == "blue" && B9 == "blue") {
-        endGame()
+        endGame("blue")
         box3.style.backgroundColor = "green"
         box6.style.backgroundColor = "green"
         box9.style.backgroundColor = "green"
     }
     else if (B3 == "blue" && B5 == "blue" && B7 == "blue") {
-        endGame()
+        endGame("blue")
         box3.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box7.style.backgroundColor = "green"
     }
     if (B1 == "red" && B2 == "red" && B3 == "red") {
-        endGame()
+        endGame("red")
         box1.style.backgroundColor = "green"
         box2.style.backgroundColor = "green"
         box3.style.backgroundColor = "green"
     }
     else if (B1 == "red" && B5 == "red" && B9 == "red") {
-        endGame()
+        endGame("red")
         box1.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box9.style.backgroundColor = "green"
     }
     else if (B1 == "red" && B4 == "red" && B7 == "red") {
-        endGame()
+        endGame("red")
         box1.style.backgroundColor = "green"
         box4.style.backgroundColor = "green"
         box7.style.backgroundColor = "green"
     }
     else if (B4 == "red" && B5 == "red" && B6 == "red") {
-        endGame()
+        endGame("red")
         box4.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box6.style.backgroundColor = "green"
     }
     else if (B7 == "red" && B8 == "red" && B9 == "red") {
-        endGame()
+        endGame("red")
         box7.style.backgroundColor = "green"
         box8.style.backgroundColor = "green"
         box9.style.backgroundColor = "green"
     }
     else if (B2 == "red" && B5 == "red" && B8 == "red") {
-        endGame()
+        endGame("red")
         box2.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box8.style.backgroundColor = "green"
     }
     else if (B3 == "red" && B6 == "red" && B9 == "red") {
-        endGame()
+        endGame("red")
         box3.style.backgroundColor = "green"
         box6.style.backgroundColor = "green"
         box9.style.backgroundColor = "green"
     }
     else if (B3 == "red" && B5 == "red" && B7 == "red") {
-        endGame()
+        endGame("red")
         box3.style.backgroundColor = "green"
         box5.style.backgroundColor = "green"
         box7.style.backgroundColor = "green"
@@ -344,6 +363,7 @@ function testForWin() {
 var state = 0
 var diffBoard = document.getElementById("difficulty")
 var buttonS = document.getElementById("singlePlayer")
+var scoreBoardS = document.getElementById("scoreboard")
 
 function enableComputer() {
     buttonPressS()
@@ -361,6 +381,7 @@ function transitionOutS() {
 }
 function transitionInDiff() {
     diffBoard.style.marginBottom = "4%"
+    diffBoard.style.opacity = "1"
 }
 function transitionOutDiff() {
     diffBoard.style.marginBottom = "50%"
@@ -368,6 +389,10 @@ function transitionOutDiff() {
 }
 function transitionIn() {
     board.style.marginBottom = "10%"
+    scoreBoardS.style.marginRight = "10%"
+    scoreBoardS.style.marginTop = "18%"
+    scoreBoardS.style.display = "flex"
+    diffBoard.style.display = "none"
 }
 
 // Difficulty Selector //
@@ -494,6 +519,83 @@ function playRand() {
         }
     }
 }
+function predictMove() {
+    if (B1 == "blue" && B2 == "blue" && B3 == "null") {
+        play("B3")
+    }
+    else if (B2 == "blue" && B3 == "blue" && B1 == "null") {
+        play("B1")
+    }
+    else if (B1 == "blue" && B3 == "blue" && B2 == "null") {
+        play("B2")
+    }
+    else if (B4 == "blue" && B5 == "blue" && B6 == "null") {
+        play("B6")
+    }
+    else if (B4 == "blue" && B6 == "blue" && B5 == "null") {
+        play("B5")
+    }
+    else if (B5 == "blue" && B6 == "blue" && B4 == "null") {
+        play("B4")
+    }
+    else if (B7 == "blue" && B8 == "blue" && B9 == "null") {
+        play("B9")
+    }
+    else if (B7 == "blue" && B9 == "blue" && B8 == "null") {
+        play("B8")
+    }
+    else if (B8 == "blue" && B9 == "blue" && B7 == "null") {
+        play("B7")
+    }
+    else if (B1 == "blue" && B4 == "blue" && B7 == "null") {
+        play("B7")
+    }
+    else if (B1 == "blue" && B7 == "blue" && B4 == "null") {
+        play("B4")
+    }
+    else if (B4 == "blue" && B7 == "blue" && B1 == "null") {
+        play("B1")
+    }
+    else if (B2 == "blue" && B5 == "blue" && B8 == "null") {
+        play("B8")
+    }
+    else if (B2 == "blue" && B8 == "blue" && B5 == "null") {
+        play("B5")
+    }
+    else if (B5 == "blue" && B8 == "blue" && B2 == "null") {
+        play("B2")
+    }
+    else if (B3 == "blue" && B6 == "blue" && B9 == "null") {
+        play("B9")
+    }
+    else if (B3 == "blue" && B9 == "blue" && B6 == "null") {
+        play("B6")
+    }
+    else if (B9 == "blue" && B6 == "blue" && B3 == "null") {
+        play("B3")
+    }
+    else if (B1 == "blue" && B9 == "blue" && B5 == "null") {
+        play("B5")
+    }
+    else if (B3 == "blue" && B7 == "blue" && B5 == "null") {
+        play("B5")
+    }
+    else if (B3 == "blue" && B5 == "blue" && B7 == "null") {
+        play("B7")
+    }
+    else if (B7 == "blue" && B5 == "blue" && B3 == "null") {
+        play("B3")
+    }
+    else if (B1 == "blue" && B5 == "blue" && B9 == "null") {
+        play("B9")
+    }
+    else if (B5 == "blue" && B9 == "blue" && B1 == "null") {
+        play("B1")
+    }
+    else {
+        playRand()
+    }
+}
 
 var p = 0
 function computerTurn(difficulty) {
@@ -503,77 +605,12 @@ function computerTurn(difficulty) {
                 playRand()
             }
             else if (difficulty == "easy") {
-                if (B1 == "blue" && B2 == "blue" && B3 == "null") {
-                    play("B3")
-                }
-                else if (B2 == "blue" && B3 == "blue" && B1 == "null") {
-                    play("B1")
-                }
-                else if (B1 == "blue" && B3 == "blue" && B2 == "null") {
-                    play("B2")
-                }
-                else if (B4 == "blue" && B5 == "blue" && B6 == "null") {
-                    play("B6")
-                }
-                else if (B4 == "blue" && B6 == "blue" && B5 == "null") {
+                predictMove()
+            }
+            else if (difficulty == "hard") {
+                predictMove()
+                if (P < 5) {
                     play("B5")
-                }
-                else if (B5 == "blue" && B6 == "blue" && B4 == "null") {
-                    play("B4")
-                }
-                else if (B7 == "blue" && B8 == "blue" && B9 == "null") {
-                    play("B9")
-                }
-                else if (B7 == "blue" && B9 == "blue" && B8 == "null") {
-                    play("B8")
-                }
-                else if (B8 == "blue" && B9 == "blue" && B7 == "null") {
-                    play("B7")
-                }
-                else if (B1 == "blue" && B4 == "blue" && B7 == "null") {
-                    play("B7")
-                }
-                else if (B1 == "blue" && B7 == "blue" && B4 == "null") {
-                    play("B4")
-                }
-                else if (B4 == "blue" && B7 == "blue" && B1 == "null") {
-                    play("B1")
-                }
-                else if (B2 == "blue" && B5 == "blue" && B8 == "null") {
-                    play("B8")
-                }
-                else if (B2 == "blue" && B8 == "blue" && B5 == "null") {
-                    play("B5")
-                }
-                else if (B5 == "blue" && B8 == "blue" && B2 == "null") {
-                    play("B2")
-                }
-                else if (B3 == "blue" && B6 == "blue" && B9 == "null") {
-                    play("B9")
-                }
-                else if (B3 == "blue" && B9 == "blue" && B6 == "null") {
-                    play("B6")
-                }
-                else if (B9 == "blue" && B6 == "blue" && B3 == "null") {
-                    play("B3")
-                }
-                else if (B1 == "blue" && B9 == "blue" && B5 == "null") {
-                    play("B5")
-                }
-                else if (B3 == "blue" && B7 == "blue" && B5 == "null") {
-                    play("B5")
-                }
-                else if (B3 == "blue" && B5 == "blue" && B7 == "null") {
-                    play("B7")
-                }
-                else if (B7 == "blue" && B5 == "blue" && B3 == "null") {
-                    play("B3")
-                }
-                else if (B1 == "blue" && B5 == "blue" && B9 == "null") {
-                    play("B9")
-                }
-                else if (B5 == "blue" && B7 == "blue" && B1 == "null") {
-                    play("B1")
                 }
                 else {
                     playRand()

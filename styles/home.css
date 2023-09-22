@@ -52,7 +52,7 @@
 }
 /* Difficulty Selectors*/
 #difficulty {
-    width: 30rem;
+    width: 33%;
     height: 85%;
     position: absolute;
     background-color: rgb(189, 189, 189);
@@ -63,6 +63,7 @@
     margin-bottom: 50%;
     transition: 0.75s;
     border-radius: 65px;
+    opacity: 0;
 }
 .diffTitle {
     position: absolute;
@@ -92,7 +93,7 @@
     border-radius: 45px;
     cursor: pointer;
     transition: 0.5s;
-    width: 9rem;
+    width: 30%;
     display: flex;
     justify-content: center;
 }
@@ -108,7 +109,7 @@
     border-radius: 45px;
     cursor: pointer;
     transition: 0.5s;
-    width: 9rem;
+    width: 30%;
     display: flex;
     justify-content: center;
 }
@@ -124,7 +125,7 @@
     border-radius: 45px;
     cursor: pointer;
     transition: 0.5s;
-    width: 9rem;
+    width: 30%;
     display: flex;
     justify-content: center;
 }
@@ -236,9 +237,46 @@
     display: flex;
     justify-content: center;
     z-index: 5;
+    user-select: none;
 }
-
-
+#scoreboard {
+    position: absolute;
+    margin-top: 10%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgb(189, 189, 189);
+    font-size: 2rem;
+    border-radius: 45px;
+    transition: 1.5s;
+    width: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    right: 0;
+    margin-right: -30%;
+    display: none;
+}
+.blue {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #698db8b9;
+}
+#blueScore {
+    margin-left: 2.5rem;
+}
+.red {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #c42535be;
+    margin-top: 15px;
+}
+#redScore {
+    margin-left: 2.5rem;
+}
 
 
 /* BG Animation */
