@@ -7,6 +7,7 @@
     height: 100%;
     background-color: rgb(221, 221, 221);
     position: absolute;
+    overflow: hidden;
 }
 /* Main Title Page*/
 #title {
@@ -138,6 +139,7 @@
     margin-left: 33%;
     bottom: 0;
     transition: 1s;
+    z-index: 5;
 }
 .line1 {
     position: absolute;
@@ -180,7 +182,7 @@
     cursor: pointer;
 }
 .box:hover {
-    background-color: rgb(189, 189, 189);
+    background-color: rgba(189, 189, 189, 0.589);
 }
 #box1 {
     margin: 0.5rem;
@@ -216,6 +218,24 @@
 #box9 {
     margin-top: 21.5rem;
     margin-left: 21.5rem;
+}
+
+#reset {
+    position: absolute;
+    margin-top: 125%;
+    font-family: "arial black";
+    color: black;
+    text-shadow: 1px 2px #34425575;
+    background-color: rgba(177, 177, 177, 0.466);
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
 }
 
 

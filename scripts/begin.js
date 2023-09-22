@@ -15,8 +15,3 @@ function transitionOut() {
 function transitionIn() {
     board.style.marginBottom = "10%"
 }
-
-// function enableComputer() {
-//     buttonSPress()
-//     state = 1
-// }

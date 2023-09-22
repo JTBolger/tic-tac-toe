@@ -8,6 +8,7 @@ var B6 = "null";
 var B7 = "null";
 var B8 = "null";
 var B9 = "null";
+var boxes = document.getElementById("box");
 var box1 = document.getElementById("box1");
 var box2 = document.getElementById("box2");
 var box3 = document.getElementById("box3");
@@ -194,7 +195,45 @@ function inputNine() {
 
 function endGame() {
     state = 0
-    x = 2
+    revealReset()
+}
+
+var resetb = document.getElementById("reset")
+function revealReset() {
+    resetb.style.marginTop = "91%"
+}
+
+function reset() {
+    state = 1
+    x = 1
+    resetb.style.marginTop = "115%"
+    B1 = "null";
+    B2 = "null";
+    B3 = "null";
+    B4 = "null";
+    B5 = "null";
+    B6 = "null";
+    B7 = "null";
+    B8 = "null";
+    B9 = "null"; 
+    box1.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box2.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box3.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box4.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box5.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box6.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box7.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box8.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    box9.style.backgroundColor = "rgba(189, 189, 189, 0)"
+    if (diff == "hard") {
+        var P = Math.floor(Math.random() * 10)
+        if (P < 5) {
+            play("B5")
+        }
+        else {
+            playRand()
+        }
+    }
 }
 
 function testForWin() {
@@ -295,6 +334,9 @@ function testForWin() {
         box5.style.backgroundColor = "green"
         box7.style.backgroundColor = "green"
     }
+    else {
+        revealReset()
+    }
 }
 
 // Computer //
@@ -340,8 +382,8 @@ function easyDiff() {
 }
 function hardDiff() {
     x = 0
-    diff = "easy"
-    P = Math.floor(Math.random() * 11)
+    diff = "hard"
+    var P = Math.floor(Math.random() * 11)
     if (P < 5) {
         play("B5")
     }
@@ -410,52 +452,55 @@ function play(box) {
 
 // Computer Program //
 
+function playRand() {
+    var i = 0
+    for (i=0; i<100; i++) {
+        p = Math.floor(Math.random() * 10)
+        if (p == 0 && B1 == "null") {
+            play("B1")
+            i = 101
+        }
+        else if(p == 1 && B2 == "null") {
+            play("B2")
+            i = 101
+        }
+        else if(p == 2 && B3 == "null") {
+            play("B3")
+            i = 101
+        }
+        else if(p == 3 && B4 == "null") {
+            play("B4")
+            i = 101
+        }
+        else if(p == 4 && B5 == "null") {
+            play("B5")
+            i = 101
+        }
+        else if(p == 5 && B6 == "null") {
+            play("B6")
+            i = 101
+        }
+        else if(p == 6 && B7 == "null") {
+            play("B7")
+            i = 101
+        }
+        else if(p == 7 && B8 == "null") {
+            play("B8")
+            i = 101
+        }
+        else if(p == 8 && B9 == "null") {
+            play("B9")
+               i = 101
+        }
+    }
+}
+
 var p = 0
-var P = 0
 function computerTurn(difficulty) {
     if (state == 1) {
         if (x == 0) {
             if (difficulty == "mindless") {
-                var i = 0
-                for (i=0; i<10; i++) {
-                    p = Math.floor(Math.random() * 10)
-                    if (p == 0 && B1 != "blue" && B1 != "red") {
-                        play("B1")
-                        i = 11
-                    }
-                    else if(p == 1 && B2 != "blue" && B2 != "red") {
-                        play("B2")
-                        i = 11
-                    }
-                    else if(p == 2 && B3 != "blue" && B3 != "red") {
-                        play("B3")
-                        i = 11
-                    }
-                    else if(p == 3 && B4 != "blue" && B4 != "red") {
-                        play("B4")
-                        i = 11
-                    }
-                    else if(p == 4 && B5 != "blue" && B5 != "red") {
-                        play("B5")
-                        i = 11
-                    }
-                    else if(p == 5 && B6 != "blue" && B6 != "red") {
-                        play("B6")
-                        i = 11
-                    }
-                    else if(p == 6 && B7 != "blue" && B7 != "red") {
-                        play("B7")
-                        i = 11
-                    }
-                    else if(p == 7 && B8 != "blue" && B8 != "red") {
-                        play("B8")
-                        i = 11
-                    }
-                    else if(p == 8 && B9 != "blue" && B9 != "red") {
-                        play("B9")
-                        i = 11
-                    }
-                }
+                playRand()
             }
             else if (difficulty == "easy") {
                 if (B1 == "blue" && B2 == "blue" && B3 == "null") {
@@ -531,46 +576,7 @@ function computerTurn(difficulty) {
                     play("B1")
                 }
                 else {
-                    var i = 0
-                    for (i=0; i<10; i++) {
-                        p = Math.floor(Math.random() * 10)
-                        if (p == 0 && B1 != "blue" && B1 != "red") {
-                            play("B1")
-                            i = 11
-                        }
-                        else if(p == 1 && B2 != "blue" && B2 != "red") {
-                            play("B2")
-                            i = 11
-                        }
-                        else if(p == 2 && B3 != "blue" && B3 != "red") {
-                            play("B3")
-                            i = 11
-                        }
-                        else if(p == 3 && B4 != "blue" && B4 != "red") {
-                            play("B4")
-                            i = 11
-                        }
-                        else if(p == 4 && B5 != "blue" && B5 != "red") {
-                            play("B5")
-                            i = 11
-                        }
-                        else if(p == 5 && B6 != "blue" && B6 != "red") {
-                            play("B6")
-                            i = 11
-                        }
-                        else if(p == 6 && B7 != "blue" && B7 != "red") {
-                            play("B7")
-                            i = 11
-                        }
-                        else if(p == 7 && B8 != "blue" && B8 != "red") {
-                            play("B8")
-                            i = 11
-                        }
-                        else if(p == 8 && B9 != "blue" && B9 != "red") {
-                            play("B9")
-                            i = 11
-                        }
-                    }
+                    playRand()
                 }
             }
         }
