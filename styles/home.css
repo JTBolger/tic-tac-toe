@@ -233,6 +233,7 @@
     border-radius: 45px;
     cursor: pointer;
     transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.14, -0.14, 0.66, 1.38);
     width: 9rem;
     display: flex;
     justify-content: center;
@@ -257,12 +258,15 @@
     right: 0;
     margin-right: -30%;
     display: none;
+    height: 20%;
+    justify-content: center;
 }
 .blue {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     background-color: #698db8b9;
+    margin-bottom: 13%;
 }
 #blueScore {
     margin-left: 2.5rem;
