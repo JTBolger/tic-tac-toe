@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en=US">
-    <head>
-        <meta charset="utf-8"/>
-        <title>tic-tac-toe</title>
-        <link href="styles/home.css" rel="stylesheet" />
-        <link rel="icon" href="images/tic-tac-toe-icon.PNG">
-    </head>
-    <body>
-        <div id="bg-anim">
+"use client"
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+ 
+import "./styles/home.css"
+import { game } from './utils'
+export default function Home() {
+ 
+  useEffect(()=>{
+    game()
+  },[])
+  return (
+    <div>
+         <div id="bg-anim">
             <ul class="Xs">
                 <li></li>
                 <li></li>
@@ -61,9 +66,6 @@
             <div class="blue"><div id="blueScore">0</div></div>
             <div class="red"><div id="redScore">0</div></div>
         </div>
-        <script src="scripts/two-player.js"></script>
-        <script src="scripts/begin.js"></script>
-    </body>
-</html>
-
- 
+    </div>
+  )
+}
